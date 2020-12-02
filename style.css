@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color:rgb(235, 235, 235);
+    font-family: Arial, sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*RESPONSIVIDADE*/
+
+
+/*Formatação header*/
+header{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20px;
+    justify-content: space-between;
+    background-color: rgb(194, 194, 194);
+}
+
+.logo{  
+    width: 50px;
+    height: 50px;
+    padding: 10px 30px;
+    display: flex;
+
+}
+
+.menu{
+    display: flex;
+    list-style : none; /*Retira os pontos na frente da lista*/
+    align-items: center;
+}
+
+.menu li {
+    padding-right: 30px;
+}
+
+.menu li a{
+    font-size: 13pt;
+    text-decoration: none; /*Retirar linhas*/
+    margin-left: 25px;
+    
+}
+
+.lupsearch{
+    display: flex;
+}
+
+header input{
+    background-image: url('https://www.w3schools.com/howto/searchicon.png');
+    background-repeat: no-repeat;
+    height: 30px;
+    border-radius: 20px;
+    background-position: 140px 3px;
+    border: none; 
+
+
+    
+}
+/*Formatação corpo noticia*/
+
+.containe{
+   
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    margin-bottom: 10%;
+    display: flex;
+    flex-wrap: wrap; /*dETERMINA QUE OS ITENS QUEBREM
+    padding: 10px;*/
+    
+
+}
+
+.grid-item{
+    flex-grow: 1; /*DETERINA O TAMANHO DO ITEM COM RELAÇÃO AO RESTANTE DOS ITENS*/   
+    flex-basis: 350px;
+    background-color: rgb(255, 255, 255);
+    height: 450px;
+    margin: 20px;
+    padding: 20px;
+   
+
+
+}
+
+
+
+#btt {
+    background-color: rgb(194, 194, 194);
+    border: none;
+    font-size: 13pt;
+    width: 70%;
+    height: 50px;
+    border-radius: 8px;
+    
+}
+
+#containebtt{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 35%;
+}
+/*Rodapé*/
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0%;
+    width: 100%;
+    height: 8%;
+    text-align: center;
+    padding-top: 30px;
+    background-color:rgb(194, 194, 194);
+}
