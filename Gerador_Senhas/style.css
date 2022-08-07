@@ -11,5 +11,18 @@ body {
   justify-content: center;
   align-items: center;
   display: flex;
-  min-width: 100vh;
+  min-height: 100vh;
+}
+
+.box {
+  background-color: rgb(91, 191, 224);
+  padding-top: 30px;
+  padding: 30px;
+}
+
+.box h2 {
+  margin-bottom: 40rem;
+  text-align: center;
+  font-size: 26px;
+  color: rgb(255, 255, 255);
 }
