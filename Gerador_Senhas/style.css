@@ -21,6 +21,12 @@ body {
   border-radius: 10px;
 }
 
+@media(max-width: 470px){
+  .box {
+    width: 285px;
+  }
+}
+
 .box h2 {
   margin-bottom: 2.5rem;
   text-align: center;
@@ -38,11 +44,19 @@ input {
   border-radius: 6px;
   outline: none;
   font-size: 22px;
+  position: relative;
 }
 
 input::placeholder {
   font-size: 23px;
 }
+
+@media(max-width: 470px){
+  input {
+    width: 230px;
+  }
+}
+
 
 #button {
   font-family: sans-serif;
@@ -52,13 +66,15 @@ input::placeholder {
   width: 10rem;
   height: 3rem;
   text-align: center;
-  background: #239eae;/*background: rgb(0, 91, 144);*/
+  background: #239eae;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 6px;
   cursor: pointer;
 }
+
 
 #button:hover{
   color: aliceblue;
