@@ -37,6 +37,13 @@
       }
 
       //Copy part...
+      function copPassWd() {
+        let textcopied = document.getElementById('passwd')
+        textcopied.select()
+        textcopied.setSelectionRange(0, 99999) // compatibilidade mobile
+        document.execCommand('copy')
+        alert('TEXTO COPIADO')
+      }
     </script>
   </body>
 </html>
