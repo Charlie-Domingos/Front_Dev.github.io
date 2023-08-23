@@ -1,161 +1,52 @@
-* {
+body,
+ul {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  background-color: rgb(235, 235, 235);
-  font-family: Arial, sans-serif;
-  width: 100%;
-  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-/*Formatação header*/
+a {
+  text-decoration: none;
+  color: #000;
+}
+
 .header {
   display: flex;
   align-items: center;
-  flex-direction: row;
-  justify-content: space-around;
-  position: sticky;
-  top: 0;
+  justify-content: space-between;
+  background-color: rgb(194, 194, 194);
   padding: 1rem;
-  background-color: #f0f0f0;
-  z-index: 100;
-}
-
-/*MENU HAMBURGUER*/
-
-.hamb {
-  width: 20px;
-  border-top: solid 2px #000000;
-  display: block;
-  height: 2px;
-  margin: 20px auto;
-  transition: background-color 0.3s ease-in-out;
-}
-
-#hamb::after,
-#hamb::before {
-  display: block;
-  content: '';
-  width: 20px;
-  height: 2px;
-  background: #000000;
-  margin-top: 5px;
-  transition: 0.4s;
-  position: relative;
-}
-
-#nav.active #hamb {
-  border-top: transparent;
-}
-
-#nav.active #menu {
-  height: calc(100vh - 70px);
-  visibility: visible;
-}
-
-nav.active #hamb::before {
-  transform: rotate(135deg);
-}
-
-#nav.active #hamb::after {
-  transform: rotate(-135deg);
-  top: -7px;
-}
-
-#set-mobile {
-  display: none;
-}
-
-@media (max-width: 1024px) {
-  #set-mobile {
-    display: block;
-  }
-  #set-mobile {
-    display: flex;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    border: none;
-    cursor: pointer;
-    background: none;
-  }
-
-  #menu {
-    position: absolute;
-    display: block;
-    position: absolute;
-    width: 100%;
-    top: 75px;
-    right: 0px;
-    height: 0px;
-    padding-top: 30px;
-    transition: 0.6s;
-    visibility: hidden;
-    overflow-y: hidden;
-    background-color: #f0f0f0;
-  }
-
-  #menu a {
-    display: block;
-    padding: 0.9rem;
-    padding: 1rem 0;
-    margin: 0 2.5rem;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-  }
-
-  #nav.active #menu {
-    height: calc(100vh - 70px);
-    visibility: visible;
-  }
+  height: 4rem;
 }
 
 .logo {
-  width: 50px;
-  height: 50px;
-  padding: 10px 30px;
-  display: flex;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-#menu {
-  display: flex;
-  align-items: center;
+.menu {
   list-style: none;
-  justify-content: space-around;
-  gap: 3.5rem;
-}
-
-.menu li {
-  padding-right: 30px;
+  display: flex;
+  gap: 0.5rem;
 }
 
 .menu a {
-  color: #828282;
-  font-weight: 600;
-  text-decoration: none;
-  font-family: 'Roboto', sans-serif;
-  position: relative;
-  overflow: hidden;
+  display: block;
+  padding: 1rem;
+  border-radius: 0.5rem;
 }
 
-.menu a:hover::before {
-  width: 100%; /* Largura completa ao passar o mouse */
+.menu a:hover{
+  background-color: rgb(180, 180, 180);
 }
 
-.menu a::before {
-  content: '';
-  width: 0;
-  height: 2px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background-color: #828282; /* Cor da linha */
-  transition: width 0.3s ease; /* Transição suave da largura */
-}
-
-.lupsearch {
-  display: flex;
-  max-width: 2rem;
+.label-menu, .checkbox {
+  display: none;
 }
 
 header input {
@@ -163,8 +54,87 @@ header input {
   background-repeat: no-repeat;
   height: 30px;
   border-radius: 10px;
-  background-position: 115px 0px;
+  background-position: 145px 6px;
   border: none;
+  margin: 12px;
+}
+
+@media (max-width : 600px) {
+  .menu {
+    display: block;
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    height: calc(0);
+    z-index: 1;
+    background-color: rgb(194, 194, 194);
+    transition: 0.5s;
+    visibility: hidden;
+    overflow-y: hidden;
+
+  }
+
+  .menu a {
+    padding: 1rem 0;
+    margin-inline: 1rem;
+    border-bottom: 0.0625rem solid rgb(114, 114, 114);
+    border-radius: 0;
+
+    padding: 25px;
+  }
+  
+  .label-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgb(194, 194, 194);
+    padding-block: 1rem;
+    cursor: pointer;
+
+  }
+
+  header input {
+    margin: 30px;
+  }
+
+  .hamburguer {
+    border-top: 0.125rem solid;
+    width: 1.25rem;
+    color: rgb(0, 0, 0);
+    visibility: visible;
+  }
+
+  .hamburguer::before, .hamburguer::after {
+    content: " ";
+    display: block;
+    width: 1.25rem;
+    height: 0.125rem;
+    background: currentColor;
+    margin-top: 0.3125rem;
+    position: relative;
+    transition: 0.3s;
+  }
+
+  .checkbox:checked ~.menu {
+    height: calc(100vh - 4.6874rem);
+    visibility: visible;
+    overflow-y: auto;
+  }
+
+  .checkbox:checked ~.label-menu .hamburguer {
+    border-top-color: transparent;
+  }
+
+  .checkbox:checked ~ .label-menu .hamburguer::before {
+    transform: rotate(135deg);
+  }
+
+  .checkbox:checked ~.label-menu .hamburguer::after {
+    transform: rotate(-135deg);
+    top: -0.4375rem;
+  }
 }
 /*Formatação corpo noticia*/
 
@@ -180,7 +150,7 @@ header input {
 .grid-item {
   flex-grow: 1; /*DETERINA O TAMANHO DO ITEM COM RELAÇÃO AO RESTANTE DOS ITENS*/
   flex-basis: 350px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(230, 230, 230);
   height: 450px;
   margin: 20px;
   padding: 20px;
@@ -199,7 +169,6 @@ header input {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  height: 35%;
 }
 /*Rodapé*/
 
